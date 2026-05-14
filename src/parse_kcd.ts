@@ -161,20 +161,20 @@ function makeSignalFromXml(
 	const rawValue = Array.isArray(xmlValue) ? xmlValue[0]["$"] : undefined;
 
 	const newSignal = new Signal(
-		xmlSignal.name,
-		xmlSignal.spn,
-		bitOffset,
-		parseInt(xmlSignal.length ?? 1),
-		xmlSignal?.endianess ?? "little",
-		labelSet,
-		muxCount,
-		parseFloat(rawValue?.slope ?? 1.0),
-		parseFloat(rawValue?.intercept ?? 0.0),
-		rawValue?.unit ?? "",
-		rawValue?.type ?? "unsigned",
-		parseFloat(rawValue?.defaultValue ?? 0.0),
-		rawValue?.min ? parseFloat(rawValue.min) : undefined,
-		rawValue?.max ? parseFloat(rawValue.max) : undefined
+        xmlSignal.name,
+        xmlSignal.spn,
+        bitOffset,
+        parseInt(xmlSignal.length != undefined ? xmlSignal.length : "1"),
+        xmlSignal && xmlSignal.endianess != undefined ? xmlSignal.endianess : "little",
+        labelSet,
+        muxCount,
+        parseFloat(rawValue && rawValue.slope != undefined ? rawValue.slope : 1.0),
+        parseFloat(rawValue && rawValue.intercept != undefined ? rawValue.intercept : 0.0),
+        rawValue && rawValue.unit != undefined ? rawValue.unit : "",
+        rawValue && rawValue.type != undefined ? rawValue.type : "unsigned",
+        parseFloat(rawValue && rawValue.defaultValue != undefined ? rawValue.defaultValue : 0.0),
+        rawValue && rawValue.min != undefined ? parseFloat(rawValue.min) : undefined,
+        rawValue && rawValue.max != undefined ? parseFloat(rawValue.max) : undefined
 	);
 
 	return newSignal;

@@ -1,11 +1,11 @@
 {
-  "name": "socketcan",
+  "name": "@tamago89/socketcan",
   "author": {
     "name": "Sebastian Haas",
     "email": "sebastian@sebastianhaas.info"
   },
   "description": "A SocketCAN abstraction layer for NodeJS.",
-  "version": "4.0.7",
+  "version": "4.0.9",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "mocha": "10.8.2",
     "nyc": "^15.0.1",
     "prettier": "^2.4.1",
-    "typescript": "4.8.4"
+    "typescript": "^4.8.4"
   },
   "dependencies": {
     "nan": "^2.23.0",
