@@ -13,12 +13,11 @@
   },
   "scripts": {
     "configure": "node-gyp configure",
-    "build": "node-gyp build",
+    "build": "node-gyp build --arch=arm --openssl_fips=''",
     "build:ts": "tsc",
     "build:all": "npm run build && npm run build:ts",
-    "lint": "eslint --fix '*/**/*.{js,ts}'",
-    "install": "node-gyp rebuild",
-    "test": "mocha"
+    "prepack": "node scripts/install.js",
+    "install": "node scripts/install.js"
   },
   "devDependencies": {
     "@types/node": "^16.18.3",
@@ -40,12 +39,13 @@
   },
   "main": "dist/socketcan.js",
   "files": [
-    "binding.gyp",
     "dist",
-    "samples",
-    "src",
-    "native",
-    "docs"
+    "build",
+    "scripts/install.js"
+  ],
+  "packEnvs": [
+    "bash",
+    "npm"
   ],
   "os": [
     "linux"
