@@ -1,9 +1,0 @@
-{
-  "name": "@tamago89/socketcan",
-  "version": "4.0.9",
-  "packed": "2026-10-12T10:41:24Z",
-  "gitSha": "991459f",
-  "gitRef": "master",
-  "node": "v24.15.0",
-  "abi": 137
-}

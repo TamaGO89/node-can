@@ -5,3 +5,7 @@ coverage
 
 npm-debug.log
 .nyc_output
+
+package-lock.json
+pkg/*.tgz
+pkg/*.manifest
